@@ -14,12 +14,12 @@ public class CalculatorTest {
 
     @BeforeEach
     public void setup() {
-        this.calculator = new Calculator();
+        calculator = new Calculator();
     }
 
     @AfterEach
     public void teardown() {
-        this.calculator = null;
+        calculator = null;
     }
 
     @Test
