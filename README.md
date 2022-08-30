@@ -6,3 +6,17 @@ scaffolding framework, since it comes with a full testing development kit.
 On this repository I use both JUnit5 and Mockito2.
 
 I've developed a simple calculator to test a standalone JUnit5 unit tests, and developed a database-like repository to simulate CRUD operations, for this I use both JUnit5 and Mockito2.
+
+# How to Run
+
+First, clone the repository:
+
+```bash
+git clone https://github.com/daliciojunior/java-tdd
+```
+
+Second, run this command:
+
+```bash
+mvn test
+```
