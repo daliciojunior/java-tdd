@@ -17,9 +17,9 @@ public class Repository {
         return id;
     }
 
-    private Integer idGenerator() {
+    public Integer idGenerator() {
         Integer aux = getId();
-        setId(getId() + 1);
+        setId(aux + 1);
         return aux;
     }
 
@@ -28,7 +28,7 @@ public class Repository {
         records = new HashMap<>();
     }
 
-    public boolean save(String author, String message) {
+    public Boolean save(String author, String message) {
         records.put(getId(), new Record(getId(), author, message));
         idGenerator();
         return true;
@@ -58,14 +58,12 @@ public class Repository {
 
     public ArrayList<Record> removeByAuthor(String author) {
         ArrayList<Record> queryResult = new ArrayList<>();
-        ArrayList<Record> recordsToRemove = new ArrayList<>();
         for (Record record : records.values()) {
             if (record.getAuthor() == author) {
                 queryResult.add(record);
-                recordsToRemove.add(record);
             }
         }
-        for (Record record : recordsToRemove) {
+        for (Record record : queryResult) {
             records.remove(record.getId());
         }
         return queryResult;

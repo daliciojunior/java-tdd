@@ -6,14 +6,6 @@ public class Record {
     private String author;
     private String message;
 
-    public Record(Integer id, String author, String message) {
-        this.id = id;
-        this.author = author;
-        this.message = message;
-    }
-
-    public Record() {}
-    
     public void setId(Integer id) {
         this.id = id;
     }
@@ -40,7 +32,15 @@ public class Record {
 
     @Override
     public String toString() {
-        return "{id=" + getId() + ", author=" + getAuthor() + ", message=" + getMessage() + "}";
+        return "{id=" + id + ", author=" + author + ", message=" + message + "}";
     }
-    
+
+    public Record(Integer id, String author, String message) {
+        this.id = id;
+        this.author = author;
+        this.message = message;
+    }
+
+    public Record() {}
+
 }

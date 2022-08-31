@@ -5,7 +5,6 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class CalculatorTest {
@@ -23,76 +22,61 @@ public class CalculatorTest {
     }
 
     @Test
-    @DisplayName("""
-            GIVEN: int a = 10, int b = 20;
-            WHEN: adding a and b together;
-            THEN: return 30;
-            """)
     public void testCalculatorAdd() {
         // Arrange
-        double expected = 30;
+        double a = 10;
+        double b = 20;
+        double expected = a + b;
         // Act
-        double actual = calculator.add(10, 20);
+        double actual = calculator.add(a, b);
         // Assert
         assertEquals(expected, actual);
     }
 
     @Test
-    @DisplayName("""
-            GIVEN: int a = 10, int b = 20;
-            WHEN: subtracting them together;
-            THEN: return -10;
-            """)
     public void testCalculatorSub() {
         // Arrange
-        double expected = -10;
+        double a = 10;
+        double b = 20;
+        double expected = a - b;
         // Act
-        double actual = calculator.sub(10, 20);
+        double actual = calculator.sub(a, b);
         // Assert
         assertEquals(expected, actual);
     }
 
     @Test
-    @DisplayName("""
-            GIVEN: int a = 10, int b = 20;
-            WHEN: multiplying them together;
-            THEN: return 200;
-            """)
     public void testCalculatorMul() {
         // Arrange
-        double expected = 200;
+        double a = 10;
+        double b = 20;
+        double expected = a * b;
         // Act
-        double actual = calculator.mul(10, 20);
+        double actual = calculator.mul(a, b);
         // Assert
         assertEquals(expected, actual);
     }
 
     @Test
-    @DisplayName("""
-            GIVEN: int a = 10, int b = 20;
-            WHEN: dividing them together;
-            THEN: return 0.5;
-            """)
     public void testCalculatorDiv() {
         // Arrange
-        double expected = 0.5;
+        double a = 10;
+        double b = 20;
+        double expected = a / b;
         // Act
-        double actual = calculator.div(10, 20);
+        double actual = calculator.div(a, b);
         // Assert
         assertEquals(expected, actual);
     }
 
     @Test
-    @DisplayName("""
-            GIVEN: int a = 10, int b = 0;
-            WHEN: dividing them together;
-            THEN: throw IllegalArgumentException;
-            """)
     public void testCalculatorDivByZero() {
         // Arrange
-        IllegalArgumentException exception = new IllegalArgumentException("CAN'T DIVIDE BY ZERO");
-        // Act & Asset
-        assertThrows(exception.getClass(), () -> calculator.div(10, 0));
+        double a = 10;
+        double b = 0;
+        IllegalArgumentException expected = new IllegalArgumentException("CAN'T DIVIDE BY ZERO");
+        // Act & Assert
+        assertThrows(expected.getClass(), () -> calculator.div(a, b));
     }
-    
+
 }
